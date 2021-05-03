@@ -1,0 +1,8 @@
+{
+  "short_name": "Alarm server web interface",
+  "name": "Alarm server web interface",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

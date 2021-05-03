@@ -1,0 +1,33 @@
+@import '~@coreui/coreui/scss/mixins';
+@import '~@coreui/coreui/scss/functions';
+@import '~@coreui/coreui/scss/variables';
+
+.alarm-table {
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+
+        .col {
+            padding: map-get($spacers, 2);
+        }
+
+        &.heading {
+            .col {
+                font-weight: $font-weight-bold;
+            }
+        }
+
+        &:not(:first-child) {
+            border-top: 1px solid $gray-200;
+        }
+
+        &:nth-child(even) {
+            background-color: $gray-100;
+        }
+    }
+
+    .text-cell {
+        padding: $input-btn-padding-y-sm 0;
+        line-height: $line-height-base;
+    }
+}
