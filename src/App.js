@@ -1,3 +1,5 @@
+import {cilPowerStandby} from '@coreui/icons';
+import CIcon from '@coreui/icons-react';
 import {
     CButton,
     CButtonGroup,
@@ -40,6 +42,7 @@ class App extends React.Component {
         this.loadAlarmEntries = this.loadAlarmEntries.bind(this);
         this.playAlarm = this.playAlarm.bind(this);
         this.sendWebSocketCommand = this.sendWebSocketCommand.bind(this);
+        this.shutdownServer = this.shutdownServer.bind(this);
         this.stopAlarm = this.stopAlarm.bind(this);
         this.stopAlarmEntry = this.stopAlarmEntry.bind(this);
     }
@@ -165,6 +168,16 @@ class App extends React.Component {
                             <AlarmForm time="15:00" addAlarm={this.addAlarm} />
                         </CCardBody>
                     </CCard>
+
+                    <CCard>
+                        <CCardHeader>System</CCardHeader>
+                        <CCardBody>
+                            <CButton className="with-icon" color="danger" onClick={this.shutdownServer}>
+                                <CIcon content={cilPowerStandby} />
+                                Shutdown
+                            </CButton>
+                        </CCardBody>
+                    </CCard>
                 </CCol>
             </CRow>
         );
@@ -177,6 +190,13 @@ class App extends React.Component {
      */
     sendWebSocketCommand(command) {
         this.webSocketCommunicator.sendMessage(command);
+    }
+
+    /**
+     * Sends the shutdown command to the server.
+     */
+    shutdownServer() {
+        this.sendWebSocketCommand('shutdown');
     }
 
     /**

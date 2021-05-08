@@ -1,13 +1,10 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import '~@coreui/coreui/scss/mixins';
+@import '~@coreui/coreui/scss/functions';
+@import '~@coreui/coreui/scss/variables';
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn.with-icon {
+    .c-icon {
+        margin: 0 map-get($spacers, 1) 0 0;
+        vertical-align: text-bottom;
+    }
 }
